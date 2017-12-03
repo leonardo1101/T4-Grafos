@@ -32,7 +32,7 @@ def mst_dijkstra(G, raizes):
         # for each v ∈ N(u) /// para cada neighbor de u
         for v in G.neighbors(u):
 
-            # if v ∈ Q and λ(v) > w(u, v) /// se v nao tiver sido visitado, procuramos a menor distancia
+            # if v ∈ Q and λ(v) > λ(u) + w(u, v) /// se v nao tiver sido visitado, procuramos a menor distancia
             if not v in visitados and lambdas[v] > lambdas[u] + G[u][v]['weight']:
 
                 # λ(v) = w(u, v) /// remove a tupla <lambda, v> da fila de prioridades, atualiza seu valor, e depois recoloca a mesma na fila
